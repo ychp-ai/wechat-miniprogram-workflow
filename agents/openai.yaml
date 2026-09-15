@@ -1,0 +1,4 @@
+interface:
+  display_name: "微信小程序工作流"
+  short_description: "通过子命令独立执行小程序设计、开发、功能优化、页面改版与验收发布"
+  default_prompt: "使用 $wechat-miniprogram-workflow help 查看可执行的子命令和调用示例。"
