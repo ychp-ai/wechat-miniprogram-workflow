@@ -27,6 +27,26 @@ $wechat-miniprogram-workflow <子命令> <目标及要求>
 | `verify` | 测试验收 | [verify.md](references/verify.md) |
 | `release` | 预览与发布 | [release.md](references/release.md) |
 
+## 显式关联技能
+
+执行节点前，查看下表并按实际任务选择关联技能。需要确认技能职责、安装情况或间接依赖时，读取 [关联技能清单](references/skill-links.md)。技能名从当前会话可用技能目录定位；本表不表示自动加载全部技能。
+
+| 子命令 | 关联 Skill 与触发条件 |
+|---|---|
+| `requirements` | 无外部 Skill 要求，按本节点完成需求分析 |
+| `design` | `ui-ux-pro-max`：UI/交互规范；`frontend-design`：需要视觉创意时 |
+| `scaffold` | `miniprogram-development`：工程搭建；采用 Skyline 时使用 `skyline-overview`、`skyline-config`、`skyline-components`、`skyline-wxss` |
+| `feature` | `miniprogram-development`：小程序实现；涉及 CloudBase 时按下述 `cloud` 行的具体职责选择 |
+| `optimize` | `miniprogram-development`：实现与验证；CloudBase 问题按 `cloud` 行选择，Skyline 问题按 `scaffold` / `motion` 行选择 |
+| `redesign` | `ui-ux-pro-max`：布局与交互；`frontend-design`：视觉方向；`impeccable`：改版细节与效果检查 |
+| `cloud` | `auth-wechat-miniprogram`：身份；`cloud-functions`：云函数；`cloudbase-document-database-in-wechat-miniprogram`：客户端文档数据库；`cloudbase-code-review`：相关代码审查；`ai-model-wechat`：仅用户要求 AI 能力时 |
+| `motion` | Skyline 项目使用 `skyline-worklet`：手势动画、`skyline-route`：转场、`skyline-scroll-api`：滚动；组件/样式问题使用 `skyline-components`、`skyline-wxss` |
+| `polish` | `impeccable`：界面打磨；`ui-ux-pro-max`：视觉与交互规范 |
+| `verify` | `miniprogram-development`：小程序验证；`cloudbase-code-review`：仅 CloudBase 相关代码范围 |
+| `release` | `miniprogram-development`：开发者工具、预览与上传相关说明 |
+
+使用某行关联技能不等于启动被引用的其他子命令。开始执行时简要说明本次实际使用的技能；结束时仅在必要时说明实际应用情况及阻塞当前操作的依赖问题。未使用的技能无需列出或解释，不将清单当作执行记录。
+
 ## 路由规则
 
 - `help`：展示子命令表和简短示例，不读取全部节点说明、不修改项目。
